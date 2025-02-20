@@ -12,7 +12,7 @@ INSTALL_DIR				= $(PWD)/glibc-bin
 all: build-glibc build
 
 build-glibc: build
-ifeq ($(wildcard $(GLIBC_DIR)),)
+ifeq ($(wildcard $(GLIBC_DIR)/*),)
 	git submodule update --init $(GLIBC_DIR)
 endif
 	CC="riscv64-unknown-linux-gnu-gcc " \
